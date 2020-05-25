@@ -22,4 +22,13 @@ public class OrderFeignController {
     public String timeOut(){
        return paymentFeignService.paymentFeignTimeout();
     }
+    // ====================> zipkin+sleuth
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin()
+    {
+        String result = paymentFeignService.getPaymentZipkin();
+        return "消费者===>"+result;
+    }
+
+
 }

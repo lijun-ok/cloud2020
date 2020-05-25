@@ -72,6 +72,11 @@ public class PaymentController {
         return servcePort;
     }
 
+    @GetMapping("/payment/zipkin")
+    public String getPaymentZipkin(){
+        return "生产者:"+servcePort;
+    }
+
     @GetMapping("/payment/feign/timeout")
     public String paymentFeignTimeout(){
         try {
